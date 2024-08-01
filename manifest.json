@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Change Monday Theme",
+  "version": "1.0",
+  "description": "A Chrome extension to change the theme on Monday CSS variable.",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.monday.com/*"],
+      "js": [
+        "themes/light.js",
+        "themes/dark.js",
+        "themes/night.js",
+        "themes/coffee.js",
+        "themes/forest.js",
+        "themes/index.js",
+        "content.js"
+      ]
+    }
+  ]
+}
